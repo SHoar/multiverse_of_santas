@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script type='text/javascript' src='https://ppl-ai-code-interpreter-files.s3.amazonaws.com/SOZjcujJKd6xXXErtEmr0HDBGPtpeRwLjpEHqMH9lMS1rnXpPDsWtCCffOOVADyho1jTkLLZeWiI-mDIkwz0fe_ffaxtSfcoZHxHah1EsKOvNp-phySAioaTd5MK4NXOrgDSJLW7pd5T4UuSRo3kDb-aWxl-78zCl4CPukShuXo='></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multiverse of Santas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+            background: linear-gradient(135deg, #001a4d 0%, #003d7a 50%, #0d47a1 100%);
+            color: #f0f8ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scene {
+            width: 100%;
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .scene.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .snow {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: snowfall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes snowfall {
+            to { transform: translateY(100vh) translateX(var(--drift, 0px)); }
+        }
+
+        /* ===== OPENING SCENE ===== */
+        .opening-scene {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            justify-content: space-around;
+        }
+
+        .hallway {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            margin-bottom: 40px;
+            background: linear-gradient(to right, #2a2a4e 0%, #3d3d6b 50%, #2a2a4e 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(100, 150, 255, 0.5);
+        }
+
+        .sleigh {
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            border-radius: 15px;
+            left: -250px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: sleighCrash 3s ease-out forwards;
+            box-shadow: 0 0 30px rgba(196, 30, 58, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        @keyframes sleighCrash {
+            0% { left: -250px; transform: translateY(-50%) rotateZ(0deg); }
+            80% { left: 50%; transform: translateY(-50%) rotateZ(-15deg); }
+            100% { left: 50%; transform: translateY(-50%) rotateZ(-10deg); opacity: 1; }
+        }
+
+        .router-device {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #ff00ff 0%, #0099ff 100%);
+            border-radius: 50%;
+            right: 10%;
+            top: 20%;
+            animation: deviceSpark 0.5s ease-out forwards;
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #0099ff;
+        }
+
+        @keyframes deviceSpark {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffff00;
+            border-radius: 50%;
+            animation: sparkFly 1s ease-out forwards;
+        }
+
+        @keyframes sparkFly {
+            to { transform: translate(var(--tx, 100px), var(--ty, 100px)); opacity: 0; }
+        }
+
+        .dialogue-box {
+            background: rgba(30, 40, 80, 0.9);
+            border: 3px solid #64b5f6;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .character-name {
+            font-weight: bold;
+            color: #ffeb3b;
+            margin-bottom: 10px;
+        }
+
+        /* ===== DIMENSION SCENES ===== */
+        .dimension-scene {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dimension-bg {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 0 40px rgba(100, 181, 246, 0.5);
+        }
+
+        .dimension-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(100, 181, 246, 1); }
+        }
+
+        /* ===== BUREAUCRACY DIMENSION ===== */
+        .bureaucracy-bg {
+            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .form-stack {
+            position: absolute;
+            width: 80px;
+            height: 60px;
+            background: white;
+            border: 2px solid #999;
+            left: 10%;
+            animation: formFloat 3s ease-in-out infinite;
+        }
+
+        .form-stack::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 50px;
+            background: #f5f5f5;
+            border: 1px dashed #999;
+            left: 5px;
+            top: 8px;
+        }
+
+        @keyframes formFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .bureaucrat-santa {
+            width: 150px;
+            height: 200px;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            border-radius: 20px 20px 10px 10px;
+            position: relative;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
+        }
+
+        .bureaucrat-santa::before {
+            content: '📋';
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .task-board {
+            background: rgba(30, 40, 80, 0.9);
+            border: 3px solid #64b5f6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 60px;
+        }
+
+        .task-item:hover {
+            background: rgba(100, 181, 246, 0.3);
+            transform: translateX(10px);
+        }
+
+        .task-item.completed {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+        .checkbox {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #64b5f6;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .task-item.completed .checkbox {
+            background: #64b5f6;
+            content: '✓';
+        }
+
+        .task-item.completed .checkbox::after {
+            content: '✓';
+            color: white;
+        }
+
+        /* ===== NINJA DIMENSION ===== */
+        .ninja-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .ninja-room {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(100, 181, 246, 0.5);
+            border-radius: 10px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ninja-room:hover {
+            border-color: #64b5f6;
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
+            transform: scale(1.05);
+        }
+
+        .ninja-silhouette {
+            opacity: 0;
+            font-size: 80px;
+            transition: opacity 0.5s ease;
+            animation: silhouetteFade 2s ease-in-out infinite;
+        }
+
+        .ninja-silhouette.visible {
+            opacity: 0.3;
+        }
+
+        .ninja-silhouette.highly-visible {
+            opacity: 0.7;
+        }
+
+        .ninja-silhouette.fully-visible {
+            opacity: 1;
+            animation: none;
+        }
+
+        @keyframes silhouetteFade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.1; }
+        }
+
+        .visibility-hint {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        /* ===== LAB DIMENSION ===== */
+        .lab-bg {
+            background: linear-gradient(135deg, #00aa44 0%, #00cc66 50%, #00aa44 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .toy-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 150px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .toy-icon {
+            font-size: 60px;
+            margin: 10px 0;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 15px 0;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .feature {
+            padding: 5px;
+            margin: 3px 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feature-toggle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cc0000;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 12px;
+        }
+
+        .feature-toggle:hover {
+            background: rgba(204, 0, 0, 0.3);
+        }
+
+        .feature-toggle.removed {
+            background: rgba(0, 204, 0, 0.5);
+            border-color: #00cc00;
+        }
+
+        .feature-toggle.removed::after {
+            content: '✓';
+            color: #00cc00;
+            font-weight: bold;
+        }
+
+        /* ===== FINALE SCENE ===== */
+        .finale-scene {
+            background: linear-gradient(180deg, #001a4d 0%, #003d7a 50%, #0f3460 100%);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-setting {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            border-radius: 30px;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(100, 181, 246, 0.5);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fireplace {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #333 0%, #000 100%);
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid #8b4513;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            animation: fireGlow 1s ease-in-out infinite;
+        }
+
+        @keyframes fireGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 100, 0, 0.5); }
+            50% { box-shadow: 0 0 50px rgba(255, 150, 0, 0.7); }
+        }
+
+        .nana-character {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background: linear-gradient(135deg, #daa520 0%, #cd853f 100%);
+            border-radius: 15px 15px 10px 10px;
+            left: 20%;
+            bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+        }
+
+        .hannah-margot {
+            position: absolute;
+            display: flex;
+            gap: 20px;
+            right: 20%;
+            bottom: 30px;
+        }
+
+        .girl {
+            width: 80px;
+            height: 140px;
+            border-radius: 15px 15px 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 0 15px rgba(100, 181, 246, 0.5);
+        }
+
+        .hannah {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        }
+
+        .margot {
+            background: linear-gradient(135deg, #87ceeb 0%, #4169e1 100%);
+        }
+
+        .nana-story {
+            background: rgba(30, 40, 80, 0.95);
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 40px;
+            animation: slideUp 1s ease-out;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .nana-story h3 {
+            color: #ffd700;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .nana-story p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        /* ===== BUTTONS ===== */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(100, 181, 246, 0.5);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(100, 181, 246, 0.8);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: #000;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+        }
+
+        /* ===== PROGRESS TRACKER ===== */
+        .progress-tracker {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 40, 80, 0.9);
+            border: 2px solid #64b5f6;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-size: 14px;
+            z-index: 100;
+            box-shadow: 0 0 15px rgba(100, 181, 246, 0.5);
+        }
+
+        .progress-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .progress-item.completed {
+            opacity: 0.5;
+        }
+
+        .progress-checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #64b5f6;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-item.completed .progress-checkmark {
+            background: #64b5f6;
+            border-color: #64b5f6;
+        }
+
+        .progress-item.completed .progress-checkmark::after {
+            content: '✓';
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .dimension-title {
+                font-size: 32px;
+            }
+
+            .dialogue-box {
+                max-width: 90%;
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .ninja-bg {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .progress-tracker {
+                top: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .nana-story {
+                padding: 25px;
+                max-width: 90%;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ninja-bg {
+                grid-template-columns: 1fr;
+            }
+
+            .dimension-bg {
+                height: 200px;
+            }
+
+            .dimension-title {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- OPENING SCENE -->
+        <div class="scene active" id="opening-scene">
+            <div class="hallway">
+                <div class="sleigh">🎅</div>
+                <div class="router-device"></div>
+            </div>
+            <div class="dialogue-box">
+                <div class="character-name">Santa (frantic):</div>
+                "Oh no! Oh dear! The Reality Router has gone haywire! Santas from every dimension are appearing everywhere! I need help!"
+            </div>
+            <div class="dialogue-box">
+                <div class="character-name">Hannah & Margot:</div>
+                "We can see the glitch! We'll help you, Santa!"
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="startMission()">Let's Fix This! →</button>
+            </div>
+        </div>
+
+        <!-- BUREAUCRACY DIMENSION -->
+        <div class="scene" id="bureaucracy-scene">
+            <div class="dimension-title">📋 Bureaucracy Dimension 📋</div>
+            <div class="dimension-bg bureaucracy-bg">
+                <div class="form-stack"></div>
+                <div class="bureaucrat-santa">
+                    Bureaucrat Santa<br>📋
+                </div>
+            </div>
+            <div class="dialogue-box">
+                <div class="character-name">Scott & Megan:</div>
+                "This Santa has organized Christmas into forms! We need to find the joy gifts hidden in all these approvals!"
+            </div>
+            <div class="task-board">
+                <div class="task-item" onclick="completeTask(this, 'bureaucracy')">
+                    <span>❌ 47-Page Gift Approval Process</span>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="task-item" onclick="completeTask(this, 'bureaucracy')">
+                    <span>❌ "Permission to Be Merry" Form</span>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="task-item" onclick="completeTask(this, 'bureaucracy')">
+                    <span>❌ Surprise Gift Registry (Violation)</span>
+                    <div class="checkbox"></div>
+                </div>
+                <div class="task-item" onclick="completeTask(this, 'bureaucracy')">
+                    <span>❌ "Fun Delivery" Override Switch</span>
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="checkBureaucracyComplete()">All Forms Cleared! →</button>
+                <button class="btn btn-primary" onclick="skipScene('ninja-scene')">Skip to Next Dimension</button>
+            </div>
+        </div>
+
+        <!-- NINJA DIMENSION -->
+        <div class="scene" id="ninja-scene">
+            <div class="dimension-title">🥷 Stealth Ninja Dimension 🥷</div>
+            <div class="dialogue-box">
+                <div class="character-name">Sean & Nikki:</div>
+                "Santa became invisible! He's so quiet now we can't even find him. Let's click to reveal him in each room!"
+            </div>
+            <div class="dimension-bg ninja-bg">
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+                <div class="ninja-room" onclick="revealNinja(this)">
+                    <div class="ninja-silhouette">🥷</div>
+                    <div class="visibility-hint">Click to reveal...</div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="checkNinjaComplete()">All Santas Revealed! →</button>
+                <button class="btn btn-primary" onclick="skipScene('lab-scene')">Skip to Next Dimension</button>
+            </div>
+        </div>
+
+        <!-- LAB DIMENSION -->
+        <div class="scene" id="lab-scene">
+            <div class="dimension-title">🔬 Mad Scientist Lab Dimension 🔬</div>
+            <div class="dimension-bg lab-bg">
+                <div class="toy-item">
+                    <div class="toy-icon">🧸</div>
+                    <strong>Teddy Bear</strong>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <span>Sensors: 47</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Wi-Fi Module</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>AI Processing</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Softness</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toy-item">
+                    <div class="toy-icon">🚂</div>
+                    <strong>Train Set</strong>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <span>GPS Tracking</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>5G Connectivity</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Blockchain Ledger</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Fun Factor</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toy-item">
+                    <div class="toy-icon">🪀</div>
+                    <strong>Yo-Yo</strong>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <span>Predictive Analytics</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Quantum Spin</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Simplicity</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                        <div class="feature">
+                            <span>Joy Multiplier</span>
+                            <div class="feature-toggle" onclick="removeFeature(this, 'lab')">✕</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialogue-box">
+                <div class="character-name">Shanna & Jeremiah:</div>
+                "These toys have too much tech! Click the X on excessive features to restore the magic of simplicity!"
+            </div>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="checkLabComplete()">Toys Restored! →</button>
+                <button class="btn btn-primary" onclick="skipScene('finale-scene')">Skip to Finale</button>
+            </div>
+        </div>
+
+        <!-- FINALE SCENE -->
+        <div class="scene" id="finale-scene">
+            <div class="dimension-title">✨ Welcome Home ✨</div>
+            <div class="home-setting">
+                <div class="fireplace">🔥</div>
+                <div class="nana-character">👵</div>
+                <div class="hannah-margot">
+                    <div class="girl hannah">👧</div>
+                    <div class="girl margot">👧</div>
+                </div>
+            </div>
+            <div class="nana-story">
+                <h3>Nana's Christmas Memory</h3>
+                <p>
+                    "My dears, long ago when your mother was just a little girl like you, the same thing happened to Christmas. Santa had gotten so caught up in making everything perfect and efficient that he forgot the most important thing: <strong>the joy of giving and the warmth of family.</strong>"
+                </p>
+                <p>
+                    "When he remembered that Christmas isn't about forms or speed or fancy technology—it's about <strong>love, wonder, and the people we care about</strong>—the magic returned. And it will always return as long as we remember that truth."
+                </p>
+                <p>
+                    "And that, my dear Hannah and Margot, is why <strong>your belief matters more than anything else.</strong>"
+                </p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="viewCredits()">See All the Santas 🎅</button>
+                <button class="btn btn-primary" onclick="resetStory()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- CREDITS SCENE -->
+        <div class="scene" id="credits-scene">
+            <div class="dimension-title">🎄 All the Santas Were Saved! 🎄</div>
+            <div class="task-board" style="max-width: 600px; margin: 40px 0;">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Our Heroes:</h3>
+                <div class="task-item">
+                    <span>🎅 Prime Santa - The Real Deal</span>
+                    <span style="color: #64b5f6;">✓</span>
+                </div>
+                <div class="task-item">
+                    <span>📋 Bureaucrat Santa - Learned to Let Loose</span>
+                    <span style="color: #64b5f6;">✓</span>
+                </div>
+                <div class="task-item">
+                    <span>🥷 Ninja Santa - Remembered to Be Seen</span>
+                    <span style="color: #64b5f6;">✓</span>
+                </div>
+                <div class="task-item">
+                    <span>🔬 Mad Scientist Santa - Found Simplicity</span>
+                    <span style="color: #64b5f6;">✓</span>
+                </div>
+                <h3 style="color: #ffd700; margin-top: 30px; margin-bottom: 20px;">Our Helpers:</h3>
+                <div class="task-item">
+                    <span>👧 Hannah & Margot - The Brave Navigators</span>
+                    <span style="color: #ffd700;">⭐</span>
+                </div>
+                <div class="task-item">
+                    <span>👨‍👩‍👧‍👦 Scott & Megan - Bureaucracy Busters</span>
+                    <span style="color: #ffd700;">⭐</span>
+                </div>
+                <div class="task-item">
+                    <span>👨‍👩‍👧 Sean & Nikki - Stealth Specialists</span>
+                    <span style="color: #ffd700;">⭐</span>
+                </div>
+                <div class="task-item">
+                    <span>👨‍👩‍👧 Shanna & Jeremiah - Tech Tamers</span>
+                    <span style="color: #ffd700;">⭐</span>
+                </div>
+                <div class="task-item">
+                    <span>👵 Colleen (Nana) - The Heart of Christmas</span>
+                    <span style="color: #ffd700;">⭐</span>
+                </div>
+            </div>
+            <div class="dialogue-box" style="margin-top: 30px;">
+                <div class="character-name">Santa:</div>
+                "Thank you all! Because of your help, Christmas is saved, and every Santa has returned to his proper dimension—ready to spread joy in his own special way. Now, go get some cookies! You've earned them! 🍪"
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="resetStory()">Play Again →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROGRESS TRACKER -->
+    <div class="progress-tracker">
+        <div style="font-weight: bold; color: #ffd700; margin-bottom: 10px;">Mission Progress</div>
+        <div class="progress-item" id="prog-bureaucracy">
+            <div class="progress-checkmark"></div>
+            <span>Bureaucracy Fixed</span>
+        </div>
+        <div class="progress-item" id="prog-ninja">
+            <div class="progress-checkmark"></div>
+            <span>Ninja Revealed</span>
+        </div>
+        <div class="progress-item" id="prog-lab">
+            <div class="progress-checkmark"></div>
+            <span>Lab Restored</span>
+        </div>
+        <div class="progress-item" id="prog-finale">
+            <div class="progress-checkmark"></div>
+            <span>Home Safe</span>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        const state = {
+            bureaucracyTasks: 0,
+            ninjaReveals: 0,
+            labFeatures: 0,
+            completedDimensions: {
+                bureaucracy: false,
+                ninja: false,
+                lab: false
+            }
+        };
+
+        // Create snowfall effect
+        function createSnowflakes() {
+            const snowContainer = document.body;
+            for (let i = 0; i < 50; i++) {
+                const snow = document.createElement('div');
+                snow.className = 'snow';
+                snow.style.left = Math.random() * 100 + '%';
+                snow.style.top = -10 + 'px';
+                snow.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                snow.style.animationDelay = Math.random() * 2 + 's';
+                snow.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
+                snowContainer.appendChild(snow);
+            }
+        }
+
+        // Scene navigation
+        function showScene(sceneId) {
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.classList.remove('active');
+            });
+            document.getElementById(sceneId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function startMission() {
+            createSparks();
+            setTimeout(() => showScene('bureaucracy-scene'), 500);
+        }
+
+        function skipScene(sceneId) {
+            showScene(sceneId);
+        }
+
+        // Spark effect on device
+        function createSparks() {
+            const router = document.querySelector('.router-device');
+            for (let i = 0; i < 12; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.left = '50%';
+                spark.style.top = '50%';
+                spark.style.setProperty('--tx', (Math.cos(i / 12 * Math.PI * 2) * 150) + 'px');
+                spark.style.setProperty('--ty', (Math.sin(i / 12 * Math.PI * 2) * 150) + 'px');
+                router.appendChild(spark);
+                setTimeout(() => spark.remove(), 1000);
+            }
+        }
+
+        // Bureaucracy dimension tasks
+        function completeTask(element, dimension) {
+            if (!element.classList.contains('completed')) {
+                element.classList.add('completed');
+                state.bureaucracyTasks++;
+                playSuccessAnimation();
+            }
+        }
+
+        function checkBureaucracyComplete() {
+            if (state.bureaucracyTasks >= 4) {
+                state.completedDimensions.bureaucracy = true;
+                updateProgress('bureaucracy');
+                showScene('ninja-scene');
+            } else {
+                alert(`Complete all tasks! (${state.bureaucracyTasks}/4)`);
+            }
+        }
+
+        // Ninja dimension reveals
+        function revealNinja(element) {
+            const silhouette = element.querySelector('.ninja-silhouette');
+            const hint = element.querySelector('.visibility-hint');
+            
+            if (silhouette.classList.contains('fully-visible')) {
+                return;
+            }
+            
+            if (!silhouette.classList.contains('visible')) {
+                silhouette.classList.add('visible');
+                hint.textContent = 'Keep clicking...';
+            } else if (!silhouette.classList.contains('highly-visible')) {
+                silhouette.classList.add('highly-visible');
+                hint.textContent = 'Almost there...';
+            } else {
+                silhouette.classList.add('fully-visible');
+                hint.textContent = 'Found! 🎅';
+                state.ninjaReveals++;
+                playSuccessAnimation();
+            }
+        }
+
+        function checkNinjaComplete() {
+            if (state.ninjaReveals >= 6) {
+                state.completedDimensions.ninja = true;
+                updateProgress('ninja');
+                showScene('lab-scene');
+            } else {
+                alert(`Reveal all Santas! (${state.ninjaReveals}/6)`);
+            }
+        }
+
+        // Lab dimension feature removal
+        function removeFeature(element, dimension) {
+            if (!element.classList.contains('removed')) {
+                element.classList.add('removed');
+                state.labFeatures++;
+                playSuccessAnimation();
+            }
+        }
+
+        function checkLabComplete() {
+            if (state.labFeatures >= 12) {
+                state.completedDimensions.lab = true;
+                updateProgress('lab');
+                showScene('finale-scene');
+            } else {
+                alert(`Remove all excessive features! (${state.labFeatures}/12)`);
+            }
+        }
+
+        // Progress tracking
+        function updateProgress(dimension) {
+            const progressId = `prog-${dimension}`;
+            document.getElementById(progressId).classList.add('completed');
+        }
+
+        // Success animation
+        function playSuccessAnimation() {
+            const audio = new Audio('data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==');
+            audio.play().catch(() => {});
+        }
+
+        // Credits
+        function viewCredits() {
+            showScene('credits-scene');
+        }
+
+        function resetStory() {
+            state.bureaucracyTasks = 0;
+            state.ninjaReveals = 0;
+            state.labFeatures = 0;
+            state.completedDimensions = {
+                bureaucracy: false,
+                ninja: false,
+                lab: false
+            };
+            
+            document.querySelectorAll('.task-item.completed').forEach(el => el.classList.remove('completed'));
+            document.querySelectorAll('.ninja-silhouette').forEach(el => {
+                el.classList.remove('visible', 'highly-visible', 'fully-visible');
+            });
+            document.querySelectorAll('.feature-toggle.removed').forEach(el => el.classList.remove('removed'));
+            document.querySelectorAll('.progress-item').forEach(el => el.classList.remove('completed'));
+            
+            showScene('opening-scene');
+        }
+
+        // Initialize
+        createSnowflakes();
+    </script>
+</body>
+</html>
