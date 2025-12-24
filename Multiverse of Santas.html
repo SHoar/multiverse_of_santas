@@ -94,7 +94,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
+            overflow: visible;
+        }
+
+        .sleigh-santa {
+            position: absolute;
+            width: 120px;
+            height: 140px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         @keyframes sleighCrash {
@@ -146,6 +155,13 @@
             box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
         }
 
+        .dialogue-characters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
@@ -155,6 +171,167 @@
             font-weight: bold;
             color: #ffeb3b;
             margin-bottom: 10px;
+        }
+
+        /* ===== CHARACTER DRAWING SYSTEM ===== */
+        .character-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .character-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Base animations */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+
+        @keyframes frantic {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-5px, -5px) rotate(-5deg); }
+            50% { transform: translate(5px, -5px) rotate(5deg); }
+            75% { transform: translate(-5px, 5px) rotate(-3deg); }
+        }
+
+        @keyframes rock {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        @keyframes excited {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-8px) scale(1.1); }
+            50% { transform: translateY(0) scale(1); }
+            75% { transform: translateY(-8px) scale(1.1); }
+        }
+
+        @keyframes stealthSway {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(5px) rotate(2deg); }
+        }
+
+        @keyframes paperShuffle {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(-2deg); }
+            75% { transform: translateY(-3px) rotate(2deg); }
+        }
+
+        @keyframes testTubeShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        /* Prime Santa */
+        .prime-santa {
+            animation: frantic 0.5s ease-in-out infinite;
+        }
+
+        .prime-santa .santa-body {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .prime-santa .santa-arm-left {
+            animation: wave 0.6s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        .prime-santa .santa-arm-right {
+            animation: wave 0.6s ease-in-out infinite 0.3s;
+            transform-origin: top center;
+        }
+
+        /* Bureaucrat Santa */
+        .bureaucrat-santa-svg {
+            animation: paperShuffle 1.5s ease-in-out infinite;
+        }
+
+        .bureaucrat-santa-svg .santa-body {
+            animation: breathe 2.5s ease-in-out infinite;
+        }
+
+        .bureaucrat-santa-svg .clipboard {
+            animation: paperShuffle 1.2s ease-in-out infinite;
+        }
+
+        /* Ninja Santa */
+        .ninja-santa-svg {
+            animation: stealthSway 3s ease-in-out infinite;
+        }
+
+        .ninja-santa-svg .ninja-body {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        /* Scientist Santa */
+        .scientist-santa {
+            animation: excited 1s ease-in-out infinite;
+        }
+
+        .scientist-santa .santa-body {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .scientist-santa .test-tube {
+            animation: testTubeShake 0.8s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        /* Hannah & Margot */
+        .hannah-character {
+            animation: excited 1.2s ease-in-out infinite;
+        }
+
+        .hannah-character .girl-body {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .hannah-character .girl-arm {
+            animation: wave 0.8s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        .margot-character {
+            animation: excited 1.2s ease-in-out infinite 0.3s;
+        }
+
+        .margot-character .girl-body {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .margot-character .girl-arm {
+            animation: wave 0.8s ease-in-out infinite 0.5s;
+            transform-origin: top center;
+        }
+
+        /* Nana */
+        .nana-svg {
+            animation: rock 3s ease-in-out infinite;
+        }
+
+        .nana-svg .nana-body {
+            animation: breathe 2.5s ease-in-out infinite;
+        }
+
+        /* Parent silhouettes */
+        .parent-silhouette {
+            animation: breathe 3s ease-in-out infinite;
         }
 
         /* ===== DIMENSION SCENES ===== */
@@ -228,24 +405,11 @@
         .bureaucrat-santa {
             width: 150px;
             height: 200px;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            border-radius: 20px 20px 10px 10px;
             position: relative;
             margin: 0 20px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
-        }
-
-        .bureaucrat-santa::before {
-            content: '📋';
-            font-size: 60px;
-            margin-bottom: 10px;
         }
 
         .task-board {
@@ -332,9 +496,18 @@
 
         .ninja-silhouette {
             opacity: 0;
-            font-size: 80px;
+            width: 100%;
+            height: 100%;
             transition: opacity 0.5s ease;
             animation: silhouetteFade 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ninja-silhouette svg {
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
         .ninja-silhouette.visible {
@@ -370,6 +543,16 @@
             gap: 20px;
             flex-wrap: wrap;
             padding: 20px;
+            position: relative;
+        }
+
+        .scientist-santa-container {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 160px;
         }
 
         .toy-item {
@@ -479,14 +662,11 @@
             position: absolute;
             width: 100px;
             height: 150px;
-            background: linear-gradient(135deg, #daa520 0%, #cd853f 100%);
-            border-radius: 15px 15px 10px 10px;
             left: 20%;
             bottom: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
             box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
         }
 
@@ -501,11 +681,9 @@
         .girl {
             width: 80px;
             height: 140px;
-            border-radius: 15px 15px 10px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
             box-shadow: 0 0 15px rgba(100, 181, 246, 0.5);
         }
 
@@ -661,6 +839,32 @@
                 max-width: 90%;
                 font-size: 16px;
             }
+
+            .sleigh-santa {
+                width: 90px;
+                height: 110px;
+            }
+
+            .bureaucrat-santa {
+                width: 120px;
+                height: 160px;
+            }
+
+            .scientist-santa-container {
+                width: 90px;
+                height: 120px;
+                right: 10px;
+            }
+
+            .nana-character {
+                width: 80px;
+                height: 120px;
+            }
+
+            .girl {
+                width: 60px;
+                height: 110px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -680,6 +884,46 @@
                 padding: 12px 20px;
                 font-size: 14px;
             }
+
+            .sleigh-santa {
+                width: 70px;
+                height: 90px;
+            }
+
+            .bureaucrat-santa {
+                width: 100px;
+                height: 140px;
+            }
+
+            .scientist-santa-container {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 80px;
+                height: 100px;
+                margin: 10px auto;
+            }
+
+            .nana-character {
+                width: 60px;
+                height: 90px;
+                left: 10%;
+            }
+
+            .girl {
+                width: 50px;
+                height: 90px;
+            }
+
+            .dialogue-characters {
+                gap: 10px;
+            }
+
+            .dialogue-characters .parent-silhouette {
+                width: 30px !important;
+                height: 45px !important;
+            }
         }
     </style>
 </head>
@@ -688,7 +932,31 @@
         <!-- OPENING SCENE -->
         <div class="scene active" id="opening-scene">
             <div class="hallway">
-                <div class="sleigh">🎅</div>
+                <div class="sleigh">
+                    <div class="sleigh-santa prime-santa">
+                        <svg class="character-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Hat -->
+                            <ellipse cx="50" cy="15" rx="35" ry="12" fill="#c41e3a"/>
+                            <rect x="40" y="15" width="20" height="25" fill="#c41e3a"/>
+                            <circle cx="50" cy="8" r="5" fill="#fff"/>
+                            <!-- Head -->
+                            <circle cx="50" cy="45" r="20" fill="#ffdbac"/>
+                            <!-- Beard -->
+                            <ellipse cx="50" cy="55" rx="18" ry="25" fill="#fff"/>
+                            <!-- Eyes -->
+                            <circle cx="45" cy="42" r="2" fill="#000"/>
+                            <circle cx="55" cy="42" r="2" fill="#000"/>
+                            <!-- Body -->
+                            <ellipse class="santa-body" cx="50" cy="85" rx="25" ry="30" fill="#c41e3a"/>
+                            <!-- Belt -->
+                            <rect x="30" y="80" width="40" height="8" fill="#000"/>
+                            <circle cx="50" cy="84" r="4" fill="#ffd700"/>
+                            <!-- Arms -->
+                            <ellipse class="santa-arm-left" cx="25" cy="75" rx="8" ry="20" fill="#c41e3a" transform="rotate(-20 25 75)"/>
+                            <ellipse class="santa-arm-right" cx="75" cy="75" rx="8" ry="20" fill="#c41e3a" transform="rotate(20 75 75)"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="router-device"></div>
             </div>
             <div class="dialogue-box">
@@ -697,6 +965,46 @@
             </div>
             <div class="dialogue-box">
                 <div class="character-name">Hannah & Margot:</div>
+                <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
+                    <div class="character-container hannah-character" style="width: 60px; height: 80px;">
+                        <svg class="character-svg" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Hair -->
+                            <path d="M 20 15 Q 15 10, 10 15 Q 15 20, 20 15 Q 25 20, 30 15 Q 35 20, 40 15 Q 45 20, 50 15 Q 45 10, 40 15" fill="#ff69b4"/>
+                            <ellipse cx="30" cy="25" rx="15" ry="18" fill="#ff69b4"/>
+                            <!-- Head -->
+                            <circle cx="30" cy="30" r="12" fill="#ffdbac"/>
+                            <!-- Eyes -->
+                            <circle cx="26" cy="28" r="1.5" fill="#000"/>
+                            <circle cx="34" cy="28" r="1.5" fill="#000"/>
+                            <!-- Smile -->
+                            <path d="M 24 32 Q 30 35, 36 32" stroke="#000" stroke-width="1" fill="none"/>
+                            <!-- Body -->
+                            <ellipse class="girl-body" cx="30" cy="55" rx="12" ry="18" fill="#ff69b4"/>
+                            <!-- Arms -->
+                            <ellipse class="girl-arm" cx="18" cy="50" rx="4" ry="12" fill="#ffdbac" transform="rotate(-20 18 50)"/>
+                            <ellipse class="girl-arm" cx="42" cy="50" rx="4" ry="12" fill="#ffdbac" transform="rotate(20 42 50)"/>
+                        </svg>
+                    </div>
+                    <div class="character-container margot-character" style="width: 60px; height: 80px;">
+                        <svg class="character-svg" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Hair -->
+                            <path d="M 20 15 Q 15 10, 10 15 Q 15 20, 20 15 Q 25 20, 30 15 Q 35 20, 40 15 Q 45 20, 50 15 Q 45 10, 40 15" fill="#4169e1"/>
+                            <ellipse cx="30" cy="25" rx="15" ry="18" fill="#4169e1"/>
+                            <!-- Head -->
+                            <circle cx="30" cy="30" r="12" fill="#ffdbac"/>
+                            <!-- Eyes -->
+                            <circle cx="26" cy="28" r="1.5" fill="#000"/>
+                            <circle cx="34" cy="28" r="1.5" fill="#000"/>
+                            <!-- Smile -->
+                            <path d="M 24 32 Q 30 35, 36 32" stroke="#000" stroke-width="1" fill="none"/>
+                            <!-- Body -->
+                            <ellipse class="girl-body" cx="30" cy="55" rx="12" ry="18" fill="#4169e1"/>
+                            <!-- Arms -->
+                            <ellipse class="girl-arm" cx="18" cy="50" rx="4" ry="12" fill="#ffdbac" transform="rotate(-20 18 50)"/>
+                            <ellipse class="girl-arm" cx="42" cy="50" rx="4" ry="12" fill="#ffdbac" transform="rotate(20 42 50)"/>
+                        </svg>
+                    </div>
+                </div>
                 "We can see the glitch! We'll help you, Santa!"
             </div>
             <div class="button-group">
@@ -710,11 +1018,57 @@
             <div class="dimension-bg bureaucracy-bg">
                 <div class="form-stack"></div>
                 <div class="bureaucrat-santa">
-                    Bureaucrat Santa<br>📋
+                    <div class="character-container bureaucrat-santa-svg" style="width: 150px; height: 200px;">
+                        <svg class="character-svg" viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Hat -->
+                            <ellipse cx="75" cy="20" rx="40" ry="15" fill="#c41e3a"/>
+                            <rect x="65" y="20" width="20" height="30" fill="#c41e3a"/>
+                            <circle cx="75" cy="12" r="6" fill="#fff"/>
+                            <!-- Head -->
+                            <circle cx="75" cy="60" r="25" fill="#ffdbac"/>
+                            <!-- Beard -->
+                            <ellipse cx="75" cy="75" rx="22" ry="30" fill="#fff"/>
+                            <!-- Eyes -->
+                            <circle cx="68" cy="55" r="2.5" fill="#000"/>
+                            <circle cx="82" cy="55" r="2.5" fill="#000"/>
+                            <!-- Glasses -->
+                            <circle cx="68" cy="55" r="8" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <circle cx="82" cy="55" r="8" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <line x1="76" y1="55" x2="74" y2="55" stroke="#333" stroke-width="1.5"/>
+                            <!-- Body -->
+                            <ellipse class="santa-body" cx="75" cy="120" rx="35" ry="45" fill="#c41e3a"/>
+                            <!-- Belt -->
+                            <rect x="45" y="110" width="60" height="10" fill="#000"/>
+                            <circle cx="75" cy="115" r="5" fill="#ffd700"/>
+                            <!-- Clipboard -->
+                            <rect class="clipboard" x="100" y="80" width="25" height="35" rx="2" fill="#fff" stroke="#333" stroke-width="1.5"/>
+                            <line x1="105" y1="90" x2="120" y2="90" stroke="#333" stroke-width="0.5"/>
+                            <line x1="105" y1="95" x2="120" y2="95" stroke="#333" stroke-width="0.5"/>
+                            <line x1="105" y1="100" x2="120" y2="100" stroke="#333" stroke-width="0.5"/>
+                            <circle cx="112" cy="105" r="2" fill="#333"/>
+                            <!-- Arms -->
+                            <ellipse cx="40" cy="110" rx="10" ry="25" fill="#c41e3a" transform="rotate(-15 40 110)"/>
+                            <ellipse cx="110" cy="105" rx="10" ry="25" fill="#c41e3a" transform="rotate(15 110 105)"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             <div class="dialogue-box">
                 <div class="character-name">Scott & Megan:</div>
+                <div class="dialogue-characters">
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                </div>
                 "This Santa has organized Christmas into forms! We need to find the joy gifts hidden in all these approvals!"
             </div>
             <div class="task-board">
@@ -746,31 +1100,128 @@
             <div class="dimension-title">🥷 Stealth Ninja Dimension 🥷</div>
             <div class="dialogue-box">
                 <div class="character-name">Sean & Nikki:</div>
+                <div class="dialogue-characters">
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                </div>
                 "Santa became invisible! He's so quiet now we can't even find him. Let's click to reveal him in each room!"
             </div>
             <div class="dimension-bg ninja-bg">
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Ninja mask -->
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <!-- Eyes -->
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <!-- Headband -->
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <!-- Body -->
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <!-- Arms -->
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
-                    <div class="ninja-silhouette">🥷</div>
+                    <div class="ninja-silhouette">
+                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
+                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
+                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
+                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
+                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
+                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
+                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
+                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
             </div>
@@ -784,6 +1235,36 @@
         <div class="scene" id="lab-scene">
             <div class="dimension-title">🔬 Mad Scientist Lab Dimension 🔬</div>
             <div class="dimension-bg lab-bg">
+                <div class="scientist-santa-container">
+                    <div class="character-container scientist-santa" style="width: 120px; height: 160px;">
+                        <svg class="character-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Lab coat -->
+                            <ellipse cx="60" cy="100" rx="35" ry="50" fill="#fff"/>
+                            <rect x="30" y="50" width="60" height="100" fill="#fff"/>
+                            <!-- Goggles -->
+                            <ellipse cx="50" cy="45" rx="12" ry="8" fill="#333"/>
+                            <ellipse cx="70" cy="45" rx="12" ry="8" fill="#333"/>
+                            <line x1="62" y1="45" x2="58" y2="45" stroke="#333" stroke-width="2"/>
+                            <!-- Hat (under goggles) -->
+                            <ellipse cx="60" cy="20" rx="30" ry="10" fill="#c41e3a"/>
+                            <rect x="50" y="20" width="20" height="25" fill="#c41e3a"/>
+                            <circle cx="60" cy="12" r="5" fill="#fff"/>
+                            <!-- Head -->
+                            <circle cx="60" cy="50" r="18" fill="#ffdbac"/>
+                            <!-- Beard -->
+                            <ellipse cx="60" cy="60" rx="15" ry="22" fill="#fff"/>
+                            <!-- Eyes (through goggles) -->
+                            <circle cx="50" cy="45" r="4" fill="#fff"/>
+                            <circle cx="70" cy="45" r="4" fill="#fff"/>
+                            <!-- Test tube -->
+                            <rect class="test-tube" x="85" y="70" width="8" height="30" rx="2" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
+                            <ellipse cx="89" cy="100" rx="4" ry="2" fill="#00ccff"/>
+                            <!-- Arms -->
+                            <ellipse cx="25" cy="90" rx="8" ry="25" fill="#fff" transform="rotate(-15 25 90)"/>
+                            <ellipse cx="95" cy="85" rx="8" ry="25" fill="#fff" transform="rotate(15 95 85)"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="toy-item">
                     <div class="toy-icon">🧸</div>
                     <strong>Teddy Bear</strong>
@@ -853,6 +1334,20 @@
             </div>
             <div class="dialogue-box">
                 <div class="character-name">Shanna & Jeremiah:</div>
+                <div class="dialogue-characters">
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                    <div class="character-container parent-silhouette" style="width: 40px; height: 60px;">
+                        <svg class="character-svg" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="#4a5568"/>
+                            <ellipse cx="20" cy="35" rx="12" ry="20" fill="#4a5568"/>
+                        </svg>
+                    </div>
+                </div>
                 "These toys have too much tech! Click the X on excessive features to restore the magic of simplicity!"
             </div>
             <div class="button-group">
@@ -866,10 +1361,74 @@
             <div class="dimension-title">✨ Welcome Home ✨</div>
             <div class="home-setting">
                 <div class="fireplace">🔥</div>
-                <div class="nana-character">👵</div>
+                <div class="nana-character">
+                    <div class="character-container nana-svg" style="width: 100px; height: 150px;">
+                        <svg class="character-svg" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Hair -->
+                            <ellipse cx="50" cy="25" rx="30" ry="20" fill="#daa520"/>
+                            <path d="M 20 25 Q 15 20, 15 30 Q 20 35, 25 30 Q 30 35, 35 30 Q 40 35, 45 30 Q 50 35, 55 30 Q 60 35, 65 30 Q 70 35, 75 30 Q 80 35, 85 30 Q 85 20, 80 25" fill="#daa520"/>
+                            <!-- Head -->
+                            <circle cx="50" cy="40" r="18" fill="#ffdbac"/>
+                            <!-- Glasses -->
+                            <circle cx="42" cy="38" r="6" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <circle cx="58" cy="38" r="6" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <line x1="48" y1="38" x2="52" y2="38" stroke="#333" stroke-width="1.5"/>
+                            <!-- Eyes -->
+                            <circle cx="42" cy="38" r="2" fill="#000"/>
+                            <circle cx="58" cy="38" r="2" fill="#000"/>
+                            <!-- Smile -->
+                            <path d="M 40 45 Q 50 50, 60 45" stroke="#000" stroke-width="1.5" fill="none"/>
+                            <!-- Body -->
+                            <ellipse class="nana-body" cx="50" cy="100" rx="28" ry="40" fill="#cd853f"/>
+                            <!-- Arms -->
+                            <ellipse cx="25" cy="95" rx="6" ry="20" fill="#ffdbac" transform="rotate(-15 25 95)"/>
+                            <ellipse cx="75" cy="95" rx="6" ry="20" fill="#ffdbac" transform="rotate(15 75 95)"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="hannah-margot">
-                    <div class="girl hannah">👧</div>
-                    <div class="girl margot">👧</div>
+                    <div class="girl hannah">
+                        <div class="character-container hannah-character" style="width: 80px; height: 140px;">
+                            <svg class="character-svg" viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Hair -->
+                                <path d="M 25 15 Q 20 10, 15 15 Q 20 20, 25 15 Q 30 20, 35 15 Q 40 20, 45 15 Q 50 20, 55 15 Q 50 10, 45 15" fill="#ff69b4"/>
+                                <ellipse cx="40" cy="30" rx="18" ry="22" fill="#ff69b4"/>
+                                <!-- Head -->
+                                <circle cx="40" cy="40" r="15" fill="#ffdbac"/>
+                                <!-- Eyes -->
+                                <circle cx="35" cy="38" r="2" fill="#000"/>
+                                <circle cx="45" cy="38" r="2" fill="#000"/>
+                                <!-- Smile -->
+                                <path d="M 30 45 Q 40 50, 50 45" stroke="#000" stroke-width="1.5" fill="none"/>
+                                <!-- Body -->
+                                <ellipse class="girl-body" cx="40" cy="90" rx="15" ry="35" fill="#ff69b4"/>
+                                <!-- Arms -->
+                                <ellipse class="girl-arm" cx="22" cy="85" rx="5" ry="18" fill="#ffdbac" transform="rotate(-20 22 85)"/>
+                                <ellipse class="girl-arm" cx="58" cy="85" rx="5" ry="18" fill="#ffdbac" transform="rotate(20 58 85)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="girl margot">
+                        <div class="character-container margot-character" style="width: 80px; height: 140px;">
+                            <svg class="character-svg" viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Hair -->
+                                <path d="M 25 15 Q 20 10, 15 15 Q 20 20, 25 15 Q 30 20, 35 15 Q 40 20, 45 15 Q 50 20, 55 15 Q 50 10, 45 15" fill="#4169e1"/>
+                                <ellipse cx="40" cy="30" rx="18" ry="22" fill="#4169e1"/>
+                                <!-- Head -->
+                                <circle cx="40" cy="40" r="15" fill="#ffdbac"/>
+                                <!-- Eyes -->
+                                <circle cx="35" cy="38" r="2" fill="#000"/>
+                                <circle cx="45" cy="38" r="2" fill="#000"/>
+                                <!-- Smile -->
+                                <path d="M 30 45 Q 40 50, 50 45" stroke="#000" stroke-width="1.5" fill="none"/>
+                                <!-- Body -->
+                                <ellipse class="girl-body" cx="40" cy="90" rx="15" ry="35" fill="#4169e1"/>
+                                <!-- Arms -->
+                                <ellipse class="girl-arm" cx="22" cy="85" rx="5" ry="18" fill="#ffdbac" transform="rotate(-20 22 85)"/>
+                                <ellipse class="girl-arm" cx="58" cy="85" rx="5" ry="18" fill="#ffdbac" transform="rotate(20 58 85)"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="nana-story">
@@ -1048,6 +1607,7 @@
         function revealNinja(element) {
             const silhouette = element.querySelector('.ninja-silhouette');
             const hint = element.querySelector('.visibility-hint');
+            const svg = silhouette.querySelector('svg');
             
             if (silhouette.classList.contains('fully-visible')) {
                 return;
@@ -1055,12 +1615,15 @@
             
             if (!silhouette.classList.contains('visible')) {
                 silhouette.classList.add('visible');
+                if (svg) svg.style.opacity = '0.3';
                 hint.textContent = 'Keep clicking...';
             } else if (!silhouette.classList.contains('highly-visible')) {
                 silhouette.classList.add('highly-visible');
+                if (svg) svg.style.opacity = '0.7';
                 hint.textContent = 'Almost there...';
             } else {
                 silhouette.classList.add('fully-visible');
+                if (svg) svg.style.opacity = '1';
                 hint.textContent = 'Found! 🎅';
                 state.ninjaReveals++;
                 playSuccessAnimation();
@@ -1126,6 +1689,8 @@
             document.querySelectorAll('.task-item.completed').forEach(el => el.classList.remove('completed'));
             document.querySelectorAll('.ninja-silhouette').forEach(el => {
                 el.classList.remove('visible', 'highly-visible', 'fully-visible');
+                const svg = el.querySelector('svg');
+                if (svg) svg.style.opacity = '0';
             });
             document.querySelectorAll('.feature-toggle.removed').forEach(el => el.classList.remove('removed'));
             document.querySelectorAll('.progress-item').forEach(el => el.classList.remove('completed'));
@@ -1135,6 +1700,11 @@
 
         // Initialize
         createSnowflakes();
+        
+        // Initialize ninja SVG opacities
+        document.querySelectorAll('.ninja-silhouette svg').forEach(svg => {
+            svg.style.opacity = '0';
+        });
     </script>
 </body>
 </html>
