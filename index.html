@@ -99,8 +99,8 @@
 
         .sleigh-santa {
             position: absolute;
-            width: 120px;
-            height: 140px;
+            width: 140px;
+            height: 160px;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
@@ -204,9 +204,9 @@
 
         @keyframes frantic {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-5px, -5px) rotate(-5deg); }
-            50% { transform: translate(5px, -5px) rotate(5deg); }
-            75% { transform: translate(-5px, 5px) rotate(-3deg); }
+            25% { transform: translate(-2px, -2px) rotate(-2deg); }
+            50% { transform: translate(2px, -2px) rotate(2deg); }
+            75% { transform: translate(-2px, 2px) rotate(-1deg); }
         }
 
         @keyframes rock {
@@ -240,7 +240,7 @@
 
         /* Prime Santa */
         .prime-santa {
-            animation: frantic 0.5s ease-in-out infinite;
+            animation: frantic 1s ease-in-out infinite;
         }
 
         .prime-santa .santa-body {
@@ -457,8 +457,8 @@
         }
 
         .bureaucrat-santa {
-            width: 150px;
-            height: 200px;
+            width: 170px;
+            height: 220px;
             position: relative;
             margin: 0 20px;
             display: flex;
@@ -565,7 +565,7 @@
             justify-content: center;
         }
 
-        .ninja-silhouette svg {
+        .ninja-silhouette img {
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -611,8 +611,8 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            width: 120px;
-            height: 160px;
+            width: 140px;
+            height: 180px;
         }
 
         .toy-item {
@@ -920,8 +920,8 @@
             }
 
             .sleigh-santa {
-                width: 100px;
-                height: 120px;
+                width: 115px;
+                height: 135px;
             }
 
             .hallway {
@@ -974,8 +974,8 @@
                 }
 
                 .sleigh-santa {
-                    width: 90px;
-                    height: 110px;
+                    width: 105px;
+                    height: 125px;
                 }
 
                 .hallway {
@@ -995,18 +995,18 @@
             }
 
             .sleigh-santa {
-                width: 90px;
-                height: 110px;
+                width: 105px;
+                height: 125px;
             }
 
             .bureaucrat-santa {
-                width: 120px;
-                height: 160px;
+                width: 140px;
+                height: 180px;
             }
 
             .scientist-santa-container {
-                width: 90px;
-                height: 120px;
+                width: 105px;
+                height: 140px;
                 right: 10px;
             }
 
@@ -1040,8 +1040,8 @@
             }
 
             .ninja-room .character-container {
-                width: 60px !important;
-                height: 80px !important;
+                width: 70px !important;
+                height: 90px !important;
             }
 
             .visibility-hint {
@@ -1064,13 +1064,13 @@
             }
 
             .sleigh-santa {
-                width: 70px;
-                height: 90px;
+                width: 80px;
+                height: 100px;
             }
 
             .bureaucrat-santa {
-                width: 100px;
-                height: 140px;
+                width: 115px;
+                height: 160px;
             }
 
             .scientist-santa-container {
@@ -1078,8 +1078,8 @@
                 right: auto;
                 top: auto;
                 transform: none;
-                width: 80px;
-                height: 100px;
+                width: 95px;
+                height: 115px;
                 margin: 10px auto;
             }
 
@@ -1119,34 +1119,7 @@
             <div class="hallway">
                 <div class="sleigh">
                     <div class="sleigh-santa prime-santa">
-                        <svg class="character-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Head (base for hat to sit on) -->
-                            <circle cx="50" cy="45" r="20" fill="#ffdbac"/>
-                            <!-- Stocking Cap - fits on head -->
-                            <path d="M 25 25 Q 25 20, 30 18 Q 35 15, 45 15 Q 55 12, 65 15 Q 70 15, 75 18 Q 80 20, 80 25 L 80 30 L 75 28 Q 70 25, 65 25 Q 55 25, 45 25 Q 35 25, 30 28 L 25 30 Z" fill="#c41e3a"/>
-                            <!-- White fur trim at bottom of cap (sits on head) -->
-                            <ellipse cx="50" cy="28" rx="28" ry="5" fill="#fff"/>
-                            <!-- Droopy cap end with pom-pom -->
-                            <path d="M 75 28 Q 78 38, 75 50 Q 72 58, 68 56" stroke="#c41e3a" stroke-width="3" fill="none" stroke-linecap="round"/>
-                            <circle cx="68" cy="56" r="5" fill="#fff"/>
-                            <!-- Beard - fuller and more natural with visible mouth -->
-                            <ellipse cx="50" cy="58" rx="20" ry="30" fill="#fff"/>
-                            <path d="M 30 58 Q 30 52, 36 54 Q 42 52, 50 54 Q 58 52, 64 54 Q 70 52, 70 58 Q 70 78, 64 85 Q 50 90, 36 85 Q 30 78, 30 58" fill="#fff"/>
-                            <ellipse cx="50" cy="75" rx="18" ry="22" fill="#fff"/>
-                            <!-- Mouth visible in beard -->
-                            <path d="M 40 65 Q 50 70, 60 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
-                            <!-- Eyes -->
-                            <circle cx="45" cy="42" r="2.5" fill="#000"/>
-                            <circle cx="55" cy="42" r="2.5" fill="#000"/>
-                            <!-- Body -->
-                            <ellipse class="santa-body" cx="50" cy="85" rx="25" ry="30" fill="#c41e3a"/>
-                            <!-- Belt -->
-                            <rect x="30" y="80" width="40" height="8" fill="#000"/>
-                            <circle cx="50" cy="84" r="4" fill="#ffd700"/>
-                            <!-- Arms -->
-                            <ellipse class="santa-arm-left" cx="25" cy="75" rx="8" ry="20" fill="#c41e3a" transform="rotate(-20 25 75)"/>
-                            <ellipse class="santa-arm-right" cx="75" cy="75" rx="8" ry="20" fill="#c41e3a" transform="rotate(20 75 75)"/>
-                        </svg>
+                        <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7d1702b8-64fd-4287-9368-001e4b3c3132.png" alt="Prime Santa" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                 </div>
                 <div class="router-device"></div>
@@ -1210,45 +1183,8 @@
             <div class="dimension-bg bureaucracy-bg">
                 <div class="form-stack"></div>
                 <div class="bureaucrat-santa">
-                    <div class="character-container bureaucrat-santa-svg" style="width: 150px; height: 200px;">
-                        <svg class="character-svg" viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Head (base for hat to sit on) -->
-                            <circle cx="75" cy="60" r="25" fill="#ffdbac"/>
-                            <!-- Stocking Cap - fits on head -->
-                            <path d="M 35 30 Q 35 25, 42 22 Q 48 18, 60 18 Q 72 15, 85 18 Q 91 18, 98 22 Q 105 25, 105 30 L 105 36 L 98 33 Q 91 30, 85 30 Q 72 30, 60 30 Q 48 30, 42 33 L 35 36 Z" fill="#c41e3a"/>
-                            <!-- White fur trim at bottom of cap (sits on head) -->
-                            <ellipse cx="75" cy="33" rx="33" ry="6" fill="#fff"/>
-                            <!-- Droopy cap end with pom-pom -->
-                            <path d="M 98 33 Q 102 45, 98 58 Q 94 68, 90 66" stroke="#c41e3a" stroke-width="4" fill="none" stroke-linecap="round"/>
-                            <circle cx="90" cy="66" r="6" fill="#fff"/>
-                            <!-- Beard - fuller and more natural with visible mouth -->
-                            <ellipse cx="75" cy="78" rx="25" ry="38" fill="#fff"/>
-                            <path d="M 50 78 Q 50 70, 60 72 Q 68 70, 75 72 Q 82 70, 90 72 Q 100 70, 100 78 Q 100 95, 90 102 Q 75 110, 60 102 Q 50 95, 50 78" fill="#fff"/>
-                            <ellipse cx="75" cy="95" rx="22" ry="28" fill="#fff"/>
-                            <!-- Mouth visible in beard -->
-                            <path d="M 60 85 Q 75 90, 90 85" stroke="#ff6b6b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                            <!-- Eyes -->
-                            <circle cx="68" cy="55" r="2.5" fill="#000"/>
-                            <circle cx="82" cy="55" r="2.5" fill="#000"/>
-                            <!-- Glasses -->
-                            <circle cx="68" cy="55" r="8" fill="none" stroke="#333" stroke-width="1.5"/>
-                            <circle cx="82" cy="55" r="8" fill="none" stroke="#333" stroke-width="1.5"/>
-                            <line x1="76" y1="55" x2="74" y2="55" stroke="#333" stroke-width="1.5"/>
-                            <!-- Body -->
-                            <ellipse class="santa-body" cx="75" cy="120" rx="35" ry="45" fill="#c41e3a"/>
-                            <!-- Belt -->
-                            <rect x="45" y="110" width="60" height="10" fill="#000"/>
-                            <circle cx="75" cy="115" r="5" fill="#ffd700"/>
-                            <!-- Clipboard -->
-                            <rect class="clipboard" x="100" y="80" width="25" height="35" rx="2" fill="#fff" stroke="#333" stroke-width="1.5"/>
-                            <line x1="105" y1="90" x2="120" y2="90" stroke="#333" stroke-width="0.5"/>
-                            <line x1="105" y1="95" x2="120" y2="95" stroke="#333" stroke-width="0.5"/>
-                            <line x1="105" y1="100" x2="120" y2="100" stroke="#333" stroke-width="0.5"/>
-                            <circle cx="112" cy="105" r="2" fill="#333"/>
-                            <!-- Arms -->
-                            <ellipse cx="40" cy="110" rx="10" ry="25" fill="#c41e3a" transform="rotate(-15 40 110)"/>
-                            <ellipse cx="110" cy="105" rx="10" ry="25" fill="#c41e3a" transform="rotate(15 110 105)"/>
-                        </svg>
+                    <div class="character-container bureaucrat-santa-svg" style="width: 170px; height: 220px;">
+                        <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/319b024e-be6b-4953-a22c-ab51696b243a.png" alt="Bureaucratic Santa" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                 </div>
             </div>
@@ -1344,222 +1280,48 @@
             <div class="dimension-bg ninja-bg">
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
                 </div>
                 <div class="ninja-room" onclick="revealNinja(this)">
                     <div class="ninja-silhouette">
-                        <div class="character-container ninja-santa-svg" style="width: 80px; height: 100px;">
-                            <svg class="character-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Head (base for hat to sit on) -->
-                                <circle cx="40" cy="35" r="18" fill="#ffdbac"/>
-                                <!-- Stocking Cap (peeking from behind mask) - fits on head -->
-                                <path d="M 18 28 Q 18 23, 24 21 Q 30 18, 40 18 Q 50 15, 56 18 Q 62 18, 68 21 Q 74 23, 74 28 L 74 32 L 68 30 Q 62 27, 56 27 Q 50 27, 40 27 Q 30 27, 24 30 L 18 32 Z" fill="#c41e3a"/>
-                                <!-- White fur trim (sits on head) -->
-                                <ellipse cx="40" cy="30" rx="28" ry="4" fill="#fff"/>
-                                <!-- Droopy cap end with pom-pom -->
-                                <path d="M 68 30 Q 71 40, 68 52 Q 65 58, 62 56" stroke="#c41e3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                                <circle cx="62" cy="56" r="4" fill="#fff"/>
-                                <!-- Ninja mask -->
-                                <ellipse cx="40" cy="35" rx="20" ry="18" fill="#1a1a1a"/>
-                                <rect x="25" y="35" width="30" height="25" fill="#1a1a1a"/>
-                                <!-- Eyes -->
-                                <ellipse cx="32" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <ellipse cx="48" cy="38" rx="3" ry="4" fill="#fff"/>
-                                <!-- Headband -->
-                                <rect x="20" y="25" width="40" height="8" fill="#c41e3a"/>
-                                <!-- Beard (peeking from mask) - fuller with visible mouth -->
-                                <ellipse cx="40" cy="60" rx="18" ry="24" fill="#fff" opacity="0.9"/>
-                                <path d="M 22 60 Q 22 54, 28 56 Q 32 54, 40 56 Q 48 54, 52 56 Q 58 54, 58 60 Q 58 72, 52 78 Q 40 82, 28 78 Q 22 72, 22 60" fill="#fff" opacity="0.9"/>
-                                <ellipse cx="40" cy="72" rx="16" ry="20" fill="#fff" opacity="0.9"/>
-                                <!-- Mouth visible in beard -->
-                                <path d="M 30 65 Q 40 70, 50 65" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-                                <!-- Body -->
-                                <ellipse class="ninja-body" cx="40" cy="70" rx="18" ry="25" fill="#2d2d2d"/>
-                                <!-- Arms -->
-                                <ellipse cx="18" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(-20 18 65)"/>
-                                <ellipse cx="62" cy="65" rx="6" ry="18" fill="#1a1a1a" transform="rotate(20 62 65)"/>
-                            </svg>
+                        <div class="character-container ninja-santa-svg" style="width: 95px; height: 115px;">
+                            <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/41bcc0e3-c799-4146-94dd-67cd9702b535.png" alt="Stealth Ninja Santa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                     <div class="visibility-hint">Click to reveal...</div>
@@ -1576,62 +1338,8 @@
             <div class="dimension-title">🔬 Mad Scientist Lab Dimension 🔬</div>
             <div class="dimension-bg lab-bg">
                 <div class="scientist-santa-container">
-                    <div class="character-container scientist-santa" style="width: 120px; height: 160px;">
-                        <svg class="character-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Lab coat with dark outline and details -->
-                            <ellipse cx="60" cy="100" rx="35" ry="50" fill="#fff" stroke="#333" stroke-width="2.5"/>
-                            <rect x="30" y="50" width="60" height="100" fill="#fff" stroke="#333" stroke-width="2.5"/>
-                            <!-- Lab coat collar -->
-                            <path d="M 35 50 L 45 50 L 50 60 L 40 60 Z" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
-                            <path d="M 85 50 L 75 50 L 70 60 L 80 60 Z" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
-                            <!-- Lab coat pockets -->
-                            <rect x="40" y="90" width="12" height="14" rx="2" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
-                            <rect x="68" y="90" width="12" height="14" rx="2" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
-                            <!-- Lab coat buttons -->
-                            <circle cx="60" cy="75" r="2" fill="#333"/>
-                            <circle cx="60" cy="85" r="2" fill="#333"/>
-                            <circle cx="60" cy="95" r="2" fill="#333"/>
-                            <!-- Head (base for hat to sit on) -->
-                            <circle cx="60" cy="50" r="18" fill="#ffdbac" stroke="#333" stroke-width="1.5"/>
-                            <!-- Wild hair (mad scientist style) -->
-                            <path d="M 42 32 Q 35 25, 30 30 Q 32 28, 35 32 Q 38 30, 42 35" fill="#8b4513" stroke="#654321" stroke-width="1"/>
-                            <path d="M 78 32 Q 85 25, 90 30 Q 88 28, 85 32 Q 82 30, 78 35" fill="#8b4513" stroke="#654321" stroke-width="1"/>
-                            <!-- Stocking Cap (under goggles) - fits on head -->
-                            <path d="M 28 25 Q 28 20, 35 18 Q 41 15, 52 15 Q 63 12, 72 15 Q 78 15, 85 18 Q 92 20, 92 25 L 92 30 L 85 28 Q 78 25, 72 25 Q 63 25, 52 25 Q 41 25, 35 28 L 28 30 Z" fill="#c41e3a" stroke="#8b0000" stroke-width="1.5"/>
-                            <!-- White fur trim at bottom of cap (sits on head) -->
-                            <ellipse cx="60" cy="28" rx="30" ry="5" fill="#fff" stroke="#ddd" stroke-width="1"/>
-                            <!-- Droopy cap end with pom-pom -->
-                            <path d="M 85 28 Q 88 38, 85 50 Q 82 58, 79 56" stroke="#c41e3a" stroke-width="3" fill="none" stroke-linecap="round"/>
-                            <circle cx="79" cy="56" r="5" fill="#fff" stroke="#ddd" stroke-width="1"/>
-                            <!-- Goggles with more detail -->
-                            <ellipse cx="50" cy="45" rx="12" ry="8" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
-                            <ellipse cx="70" cy="45" rx="12" ry="8" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
-                            <line x1="62" y1="45" x2="58" y2="45" stroke="#000" stroke-width="2.5"/>
-                            <!-- Goggle reflections -->
-                            <ellipse cx="48" cy="43" rx="3" ry="2" fill="#fff" opacity="0.6"/>
-                            <ellipse cx="68" cy="43" rx="3" ry="2" fill="#fff" opacity="0.6"/>
-                            <!-- Beard - fuller and more natural with visible mouth, darker outline -->
-                            <ellipse cx="60" cy="63" rx="18" ry="28" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
-                            <path d="M 42 63 Q 42 56, 50 58 Q 54 56, 60 58 Q 66 56, 70 58 Q 78 56, 78 63 Q 78 76, 70 82 Q 60 86, 50 82 Q 42 76, 42 63" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
-                            <ellipse cx="60" cy="75" rx="16" ry="22" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
-                            <!-- Mouth visible in beard -->
-                            <path d="M 50 68 Q 60 73, 70 68" stroke="#ff6b6b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                            <!-- Eyes (through goggles) - more visible -->
-                            <circle cx="50" cy="45" r="5" fill="#4a90e2"/>
-                            <circle cx="70" cy="45" r="5" fill="#4a90e2"/>
-                            <circle cx="50" cy="45" r="3" fill="#000"/>
-                            <circle cx="70" cy="45" r="3" fill="#000"/>
-                            <!-- Test tube with more detail -->
-                            <rect class="test-tube" x="85" y="70" width="8" height="30" rx="2" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
-                            <ellipse cx="89" cy="100" rx="4" ry="2" fill="#00ccff"/>
-                            <ellipse cx="89" cy="75" rx="3" ry="1" fill="#00ccff" opacity="0.5"/>
-                            <!-- Arms with darker outline -->
-                            <ellipse cx="25" cy="90" rx="8" ry="25" fill="#fff" stroke="#333" stroke-width="2" transform="rotate(-15 25 90)"/>
-                            <ellipse cx="95" cy="85" rx="8" ry="25" fill="#fff" stroke="#333" stroke-width="2" transform="rotate(15 95 85)"/>
-                            <!-- Lab coat sleeves -->
-                            <ellipse cx="25" cy="90" rx="6" ry="20" fill="#e8e8e8" stroke="#333" stroke-width="1.5" transform="rotate(-15 25 90)"/>
-                            <ellipse cx="95" cy="85" rx="6" ry="20" fill="#e8e8e8" stroke="#333" stroke-width="1.5" transform="rotate(15 95 85)"/>
-                        </svg>
+                    <div class="character-container scientist-santa" style="width: 140px; height: 180px;">
+                        <img class="character-svg" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/240d42e3-0ea8-4c30-98b4-fc1379ff68f9.png" alt="Mad Scientist Santa" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                 </div>
                 <div class="toy-item">
@@ -2035,7 +1743,7 @@
         function revealNinja(element) {
             const silhouette = element.querySelector('.ninja-silhouette');
             const hint = element.querySelector('.visibility-hint');
-            const svg = silhouette.querySelector('svg');
+            const img = silhouette.querySelector('img');
             
             if (silhouette.classList.contains('fully-visible')) {
                 return;
@@ -2043,15 +1751,15 @@
             
             if (!silhouette.classList.contains('visible')) {
                 silhouette.classList.add('visible');
-                if (svg) svg.style.opacity = '0.3';
+                if (img) img.style.opacity = '0.3';
                 hint.textContent = 'Keep clicking...';
             } else if (!silhouette.classList.contains('highly-visible')) {
                 silhouette.classList.add('highly-visible');
-                if (svg) svg.style.opacity = '0.7';
+                if (img) img.style.opacity = '0.7';
                 hint.textContent = 'Almost there...';
             } else {
                 silhouette.classList.add('fully-visible');
-                if (svg) svg.style.opacity = '1';
+                if (img) img.style.opacity = '1';
                 hint.textContent = 'Found! 🎅';
                 state.ninjaReveals++;
                 playSuccessAnimation();
@@ -2122,8 +1830,8 @@
             document.querySelectorAll('.task-item.completed').forEach(el => el.classList.remove('completed'));
             document.querySelectorAll('.ninja-silhouette').forEach(el => {
                 el.classList.remove('visible', 'highly-visible', 'fully-visible');
-                const svg = el.querySelector('svg');
-                if (svg) svg.style.opacity = '0';
+                const img = el.querySelector('img');
+                if (img) img.style.opacity = '0';
             });
             document.querySelectorAll('.feature-toggle.removed').forEach(el => el.classList.remove('removed'));
             document.querySelectorAll('.progress-item').forEach(el => el.classList.remove('completed'));
@@ -2134,9 +1842,9 @@
         // Initialize
         createSnowflakes();
         
-        // Initialize ninja SVG opacities
-        document.querySelectorAll('.ninja-silhouette svg').forEach(svg => {
-            svg.style.opacity = '0';
+        // Initialize ninja image opacities
+        document.querySelectorAll('.ninja-silhouette img').forEach(img => {
+            img.style.opacity = '0';
         });
     </script>
 </body>
